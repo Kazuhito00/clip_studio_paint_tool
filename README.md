@@ -1,5 +1,5 @@
 # clip_studio_paint_tool
-CLIP STUDIO PAINT（クリスタ）のファイル（.clip）から、レイヤー名やサムネイル画像、ラスター画像を取得するツールです（非公式）<br><br>
+CLIP STUDIO PAINT（クリスタ）のファイル（.clip）から、レイヤー名やサムネイル画像、ラスター画像を取得するツールです（非公式）<br>グレースケール画像やモノクロ画像には対応していません<br>
 <img src="https://github.com/Kazuhito00/clip_studio_paint_tool/assets/37477845/9a77031b-0f98-4836-ad6f-ae64d7645e57" width="45%">　<img src="https://github.com/Kazuhito00/clip_studio_paint_tool/assets/37477845/21b0d6c5-1b72-4000-8e2c-aad4754e3e19" width="45%">
 
 # Requirement
