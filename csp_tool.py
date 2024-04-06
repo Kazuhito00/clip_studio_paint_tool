@@ -813,8 +813,8 @@ if __name__ == '__main__':
     # 表示確認
     import cv2
     if bgr_image is not None:
-        cv2.imshow('Clip Studio Paint File:Image', bgr_image)
-        cv2.imshow('Clip Studio Paint File:Alpha', alpha_image)
+        cv2.imshow('Clip Studio Paint File : Image', bgr_image)
+        cv2.imshow('Clip Studio Paint File : Alpha', alpha_image)
         cv2.waitKey(-1)
     else:
         print('Layer does not contain image.')
