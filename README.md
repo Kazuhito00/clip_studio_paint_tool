@@ -42,6 +42,10 @@ cv2.imshow('Clip Studio Paint File : Alpha', alpha_image)
 cv2.waitKey(-1)
 ```
 
+# ToDo
+- [ ] ブロックデータの処理をパラレルにして高速化する
+- [ ] グレースケール、モノクロ画像の読み出しに対応する
+
 # Author
 高橋かずひと(https://twitter.com/KzhtTkhs)
  
