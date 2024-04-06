@@ -8,6 +8,7 @@ import struct
 import sqlite3
 import logging
 
+import cv2
 import numpy as np
 
 
@@ -56,6 +57,14 @@ class CspTool(object):
 
     def get_layer_list(self):
         return self.layer_list
+
+    def get_thumbnail_image(self):
+        thumbnail_image = self.canvas_preview_list[0]['image_data']
+        thumbnail_image = cv2.imdecode(
+            np.frombuffer(thumbnail_image, np.uint8),
+            flags=cv2.IMREAD_COLOR,
+        )
+        return thumbnail_image
 
     def get_raster_data(self, canvas_id, layer_id):
         start_time = time.time()
@@ -796,6 +805,9 @@ if __name__ == '__main__':
         debug_level='WARNING',  # 'DEBUG'
     )
 
+    # サムネイル画像取得
+    thumbnail_image = csp_tool.get_thumbnail_image()
+
     # レイヤー情報取得
     layer_list = csp_tool.get_layer_list()
     for layer_data in layer_list:
@@ -811,8 +823,8 @@ if __name__ == '__main__':
     )
 
     # 表示確認
-    import cv2
     if bgr_image is not None:
+        cv2.imshow('Clip Studio Paint File : Thumbnail Image', thumbnail_image)
         cv2.imshow('Clip Studio Paint File : Image', bgr_image)
         cv2.imshow('Clip Studio Paint File : Alpha', alpha_image)
         cv2.waitKey(-1)
