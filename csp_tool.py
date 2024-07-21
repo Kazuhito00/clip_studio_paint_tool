@@ -235,7 +235,7 @@ class CspTool(object):
         layer_list = []
         query_results = self._exec_sqlite_query(
             connect,
-            "SELECT MainId, CanvasId, LayerName, LayerUuid, LayerRenderMipmap, LayerRenderThumbnail FROM Layer;",
+            "SELECT MainId, CanvasId, LayerName, LayerUuid, LayerRenderMipmap, LayerRenderThumbnail, LayerNextIndex, LayerFirstChildIndex, LayerType FROM Layer;",
         )
         for query_result in query_results:
             main_id = query_result[0]
@@ -244,6 +244,9 @@ class CspTool(object):
             layer_uuid = query_result[3]
             layer_render_mipmap = query_result[4]
             layer_render_thumbnail = query_result[5]
+            layer_next_index = query_result[6]
+            layer_first_child_index = query_result[7]
+            layer_type = query_result[8]
 
             layer_data = {
                 'main_id': main_id,
@@ -252,6 +255,9 @@ class CspTool(object):
                 'layer_uuid': layer_uuid,
                 'layer_render_mipmap': layer_render_mipmap,
                 'layer_render_thumbnail': layer_render_thumbnail,
+                'layer_next_index': layer_next_index,
+                'layer_first_child_index': layer_first_child_index,
+                'layer_type': layer_type,
             }
             layer_list.append(layer_data)
 
